@@ -7591,7 +7591,7 @@ $rem-base: 16px !default;
 /* scss-combine:general/fonts */
 [class^="icon-"],
 [class*=" icon-"] {
-  font-family: "form-icons";
+  font-family: 'icomoon' !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
@@ -7613,8 +7613,8 @@ $rem-base: 16px !default;
 .icon-youtube::before { content: "\e607"; }
 .icon-arrow-left::before { content: "\e608"; }
 .icon-arrow-right::before { content: "\e609"; }
-.icon-cart::before { content: "\e60a"; }
-.icon-search::before { content: "\e60b"; }
+.icon-cart::before { content: "\e93a"; }
+.icon-search::before { content: "\e986"; }
 .icon-user::before { content: "\e60c"; }
 .icon-mail::before { content: "\e60d"; }
 .icon-print::before { content: "\e60e"; }
