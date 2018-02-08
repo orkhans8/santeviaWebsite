@@ -1,0 +1,17 @@
+.home-block {
+	color:#000;
+	padding: 8% 0;
+	text-align: center;
+
+	&.turquoise {
+		background-color: $turq;
+	}
+	&.grey {
+		background-color: $grey-light;
+	}
+
+	h2.section-title {
+		color:#000;
+		font-weight: bold;
+	}
+}

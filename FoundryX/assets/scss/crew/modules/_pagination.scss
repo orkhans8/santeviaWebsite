@@ -1,0 +1,52 @@
+.pagination {
+	.pagination-item {
+		position: relative;
+		top:8px;
+		font-weight: bold;
+		transition: all 0.3s ease;
+		&:hover {
+			color:$green;
+		}
+		i {
+			font-size: 30px;
+			vertical-align: -8px;
+			color: inherit;
+		}
+		&.previous {
+			i {
+				font-family: 'icomoon';
+				&:before {
+					content: "\f0d9";
+				}
+			}
+		}
+		&.next {
+			i {
+				font-family: 'icomoon';
+				&:before {
+					content: "\f0da";
+				}
+			}
+		}
+	}
+	.pagination-number {
+		padding:10px 20px;
+		border:none;
+		a {
+			transition: all 0.3s ease;
+			&:hover {
+				color:$green;
+			}
+		}
+		&.pagination-current {
+			padding:10px 20px;
+			background-color: $green;
+			a {
+				&:hover {
+					color:#000;
+					cursor: default;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.home-charity-callout {
+	background: {
+		size:cover;
+		position: center;
+		repeat:no-repeat;
+		image: url('../img/charity-bg.jpg');
+	}
+
+	.home-charity-callout--container {
+		max-width: 900px;
+		margin:0 auto;
+		p {
+			margin-bottom: 30px;
+		}
+		.section-title {
+			padding-bottom: 5px;
+		}
+	}
+}

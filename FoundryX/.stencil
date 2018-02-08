@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "https://www.santevia.com",
+  "port": "3000",
+  "clientId": "j2qdnvft7b92ucvkfctd1ys7ws61o14",
+  "accessToken": "ff0tl3lb7wft784hf17rrc9u5q0dahs",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

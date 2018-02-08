@@ -1,0 +1,69 @@
+{{#partial "page"}}
+
+<div class="page-wrap">
+  <section class="page-header">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="page-title">{{page.title}}</h1>
+          
+          <div class="page-description"></div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="s-header">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-12">  
+          {{> components/common/breadcrumbs breadcrumbs}}
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+
+    <div class="container">
+      <div class="row page-content rte">
+        <div class="col-lg-12">
+          {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss-feed}}
+          {{else}}
+            {{{page.content}}}
+          {{/replace}}
+
+          {{#if page.feed}}
+            <ul class="page-feed">
+              {{#each page.feed}}
+                <li>
+                  <h5><a href="{{url}}" target="_blank">{{title}}</a></h5>
+                  <p>{{{content}}}</p>
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script>
+// get meta description, add to header
+ var desc = document.head.querySelector("[name=description]").content,
+     descContainer = document.querySelector('.page-description');
+     if (desc.length && desc !== 'Buy Santevia Pure AlkalineWater Systems, replacement filters and parts.') {
+        descContainer.innerHTML = desc;
+     }
+</script>
+
+{{/partial}}
+
+{{> layout/base}}

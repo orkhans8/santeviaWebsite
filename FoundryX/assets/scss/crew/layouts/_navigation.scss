@@ -1,0 +1,18 @@
+.navigation-alternate .header-branding {
+	float: left;
+	width: auto;
+}
+.navigation-wrap {
+	.nav-menu {
+		margin-top: 22px;
+		float: right;
+		width: auto;
+		a {
+			font-weight: bold;
+			transition: all 0.3s ease;
+			&:hover {
+				color:$green;
+			}
+		}
+	}
+}

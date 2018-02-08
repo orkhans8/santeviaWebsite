@@ -1,0 +1,75 @@
+---
+category:
+  products:
+    limit: {{theme_settings.product_results_per_page}}
+---
+
+{{#partial "page"}}
+<div class="cat-wrap">
+  
+	<section class="layout-block cat-header">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<h1 class="category-title">{{category.name}}</h1>
+					{{#if category.description.length}}
+					{{/if}}
+					
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<section class="sub-header">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-md-4 mb-4">
+					{{> components/common/breadcrumbs breadcrumbs}}
+				</div>
+				<div class="col-md-4 mb-4">
+			      {{#if category.products.length}}
+			        {{#unless category.faceted_search_enabled}}
+			          <div class="product-grid-sorting">
+			            {{> components/sorting sort=pagination.category.sort}}
+			          </div>
+			        {{/unless}}
+
+			        {{#if category.facets.length}}
+			          {{#if category.faceted_search_enabled}}
+			            <div class="product-grid-sidebar">
+			              {{> components/sorting sort=pagination.category.sort}}
+
+			              <div class="product-grid-filters">
+			                {{> components/category/filters}}
+			              </div>
+			            </div>
+			          {{/if}}
+			        {{/if}}
+			      {{/if}}
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<div class="cat-description rte">{{{category.description}}}</div>
+			</div>
+		</div>
+	</div>
+
+  <section class="layout-block product-grid">
+    <div class="product-grid-container {{#if category.faceted_search_enabled}}has-sidebar{{/if}}">
+
+
+      <div class="product-grid-list" data-quickshop>
+        {{> components/category/product-index}}
+      </div>
+
+    </div>
+  </section>
+</div>
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,42 @@
+.country-warning-message {
+	background-color: rgba(255,0,0,.8);
+	display: none;
+	position:relative;
+	.icon-close {
+		position: absolute;
+		right: 20px;
+		color:#fff;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 13px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		&:hover {
+			color: #000;
+		}
+	}
+	span {
+		padding: 5px 0;
+		color: #fff;
+		font-size: 14px;
+		display: block;
+		text-align: center;
+		a {
+			color:#fff;
+			text-decoration: underline;
+		}
+	}
+	.sticky-warning-message & {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		width: 100%;
+		opacity: 0;
+	}
+
+	&.fade-in {
+		transition: all 0.3s ease;
+		opacity: 1;
+	}
+}
+

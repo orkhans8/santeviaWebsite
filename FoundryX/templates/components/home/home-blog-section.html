@@ -1,0 +1,19 @@
+<section class="home-block home-blog-section blog-block">
+
+  <div class="home-blog-section--container">
+      <h2>{{blog.name}}</h2>
+      <div class="home-blog-list product-grid-container">
+        {{#each blog.recent_posts}}
+            <div class="item">
+              <div class="content">
+                <h3>{{date_published}}</h3>
+                <h4>{{title}}</h4>
+                <p>{{summary}}...</p>
+                <a href="{{url}}" class="btn arrow">READ MORE<i class="crew-icon-thin-arrow-right"></i></a>
+              </div>
+            </div>
+        {{/each}}
+      </div>
+  </div>
+
+</section>

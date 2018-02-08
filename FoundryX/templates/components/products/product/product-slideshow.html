@@ -1,0 +1,32 @@
+<div class="product-slideshow {{#if product.images.length '>' 1}}visible-controls{{/if}}">
+  <div class="product-slideshow-images" data-slideshow-position="0" data-product-images>
+    {{#if product.images}}
+      {{#each product.images}}
+        <img class="product-slideshow-image" data-image-position="{{@index}}" src="{{getImage this 'product_zoom'}}" alt="{{this.alt}}" data-product-images-main>
+      {{/each}}
+    {{else}}
+      <img class="product-slideshow-image" data-image-position="{{@index}}" src="{{cdn '/assets/icons/icon-no-image.svg'}}" alt="{{lang 'product.no_image'}}" class="no-image" data-product-images-main>
+    {{/if}}
+
+    {{#if product.price.saved}}
+      <span class="product-single-sale-badge">{{lang 'product.on_sale'}}</span>
+    {{/if}}
+
+    {{> components/common/spinner}}
+  </div>
+
+  {{#if product.images.length ">" 1}}
+    <div class="product-thumbnails">
+      {{#each product.images}}
+        <span
+          class="product-thumbnail {{#if @first}}active{{/if}}"
+          style="background-image: url({{getImage this 'product_thumbnail'}});"
+          data-image-position="{{@index}}"
+          data-high-res="{{getImage this 'product_zoom'}}"
+          data-product-thumbnail>
+          <img class="show-for-sr" src="{{getImage this 'product_thumbnail'}}" alt="{{this.alt}}">
+        </span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

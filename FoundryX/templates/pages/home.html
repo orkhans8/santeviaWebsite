@@ -1,0 +1,69 @@
+---
+carousel: true
+products:
+  featured:
+    limit: {{theme_settings.homepage_products_featured}}
+  top_sellers:
+    limit: {{theme_settings.homepage_products_popular}}
+  new:
+    limit: {{theme_settings.homepage_products_new}}
+blog:
+    recent_posts:
+        limit: 4
+        summary: 150
+---
+
+{{#partial "page"}}
+  
+  {{#if carousel.slides.length}}
+    {{#if carousel}}
+      {{> modules/carousel}}
+    {{/if}}
+  {{/if}}
+
+  {{{snippet 'home_content'}}}
+
+  {{#if theme_settings.homepage_products_featured}}
+    {{> components/products/featured
+      products=products.featured
+      quickshop=theme_settings.show_quick_shop
+      rowcount=theme_settings.featured_products_per_row
+      crop=theme_settings.grid_aspect_ratio}}
+  {{/if}}
+
+  {{> components/home/home-shop-callout }}
+  {{> components/home/home-body-health-callout }}
+  {{> components/home/home-testimonial }}
+  {{> components/home/home-charity-callout }}
+
+  {{#if settings.secure_host '===' 'www.santevia.com'}}
+    {{> components/home/home-blog-section }}
+  {{/if}}
+  
+  {{#if theme_settings.homepage_products_popular}}
+    {{> components/products/popular
+      products=products.top_sellers
+      quickshop=theme_settings.show_quick_shop
+      rowcount=theme_settings.popular_products_per_row
+      crop=theme_settings.grid_aspect_ratio}}
+  {{/if}}
+
+  {{#if theme_settings.homepage_products_new}}
+    {{> components/products/new
+      products=products.new
+      quickshop=theme_settings.show_quick_shop
+      rowcount=theme_settings.new_products_per_row
+      crop=theme_settings.grid_aspect_ratio}}
+  {{/if}}
+
+  {{#if theme_settings.homepage_show_widgets}}
+    {{> components/snippets/social-feeds}}
+  {{/if}}
+
+  {{#if theme_settings.homepage_show_newsletter}}
+    {{> components/snippets/newsletter-signup}}
+  {{/if}}
+
+{{/partial}}
+
+{{> layout/base}}

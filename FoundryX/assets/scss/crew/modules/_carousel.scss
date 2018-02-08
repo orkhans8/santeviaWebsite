@@ -1,0 +1,88 @@
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.carousel {
+	.carousel-item-heading {
+		text-shadow: 0px 0px 20px rgba($turq,1);
+		padding-top:0;
+		@media screen and (min-width:770px) {
+			padding-top: 70px;
+		}
+		@media screen and (min-width:850px) {
+			padding-top: 100px;
+		}
+	}
+	.carousel-item-button {
+		border:none;
+		border-radius:0;
+		padding: 20px 30px;
+		margin-top: 40px;
+		font-size: 18px;
+		font-weight: bold;
+		@extend .btn;
+		&:hover {
+			background-color: $green;
+		}
+	}
+	.carousel-navigation-item {
+		color:#000;
+		opacity: 1;
+		transition: all 0.3s ease;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+	.video-slide {
+		.carousel-item-heading {
+			text-shadow: none;
+		}
+		.vid {
+			width: 100%;
+			position: relative;
+			padding-bottom: 41.5%;
+		}
+		.vid-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			padding-bottom:56.25%;
+			width: 100%;
+			height: 100%;
+			z-index: -99;
+		}		
+		#player, .poster {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			height: 100%;
+			transform:translate(-50%,-50%);
+		}
+		.poster {
+			opacity: 1;
+			z-index: 99;
+			background: {
+				//image: url('../img/inner/header.jpg');
+				position: center;
+				size:cover;
+				repeat:no-repeat;
+			}
+			&.fade-in {
+				animation: fadeOut 2s ease-in 1 forwards;
+				animation-delay: 1s;
+			}
+			&.fade-in-faster {
+			  	animation: fadeOut 1s ease-in 1 forwards;
+			  	animation-delay: 1s;
+			}
+			&.is-paused {
+			  animation-play-state: paused;
+			}
+		}
+
+	}
+}

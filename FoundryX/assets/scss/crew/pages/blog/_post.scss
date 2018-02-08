@@ -1,0 +1,111 @@
+.post-wrapper {
+
+	.post-header {
+		background: {
+			size:cover;
+			position:centerr;
+			repeat:no-repeat;
+			color: $green;
+		}
+		padding:25% 0 3%;
+		width: 100%;
+		position: relative;
+		&:before {
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+			opacity: 0.4;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&1+0,0+100 */
+			background: -moz-linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(45deg, rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(45deg, rgba(0,0,0,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		.blog-post-date {
+			color:#fff;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			letter-spacing: 1px;
+		}
+		h1 {
+			margin:0;
+			color:#fff;
+			font-weight: bold;
+			font-size: 55px;
+			@media screen and (max-width: 1039px) {
+				font-size: 36px;
+			}
+			letter-spacing:5px;
+		}
+
+	}
+
+	.sub-header {
+		text-align: left;
+		max-width: 100%;
+		float: none;
+		padding:20px 0px;
+		.breadcrumb-container {
+			border-bottom: 1px solid #e0dedb;
+			padding-bottom:20px;
+		}
+	}
+
+	.layout-block {
+		padding-top: 10px;
+	}
+
+	.single-post {
+		text-align: left;
+	}
+
+	.sidebar {
+		text-align: left;
+		div:first-child {
+			padding-top:0!important;
+			margin-top:0!important;
+		}
+		h4 {
+			font-weight: bold;
+			text-transform: none;
+			margin-bottom:5px;
+		}
+		.blog-post-author {
+			&:before {
+				display: none;
+			}
+		}
+		.blog-post-tags {
+			text-align: left;
+			float: none;
+		    padding-top: 15px;
+		    margin-top: 30px;
+			.blog-post-tag {
+				a {
+					background-color: #f6f6f6;
+					display: inline-block;
+					margin-bottom: 10px;
+					padding: 5px 10px;
+					transition: all 0.3s ease;
+					&:hover {
+						background-color: #f6f6f6 - 10;
+					}
+				}
+			}
+		}
+	}
+
+	.blog-post-sharing {
+		border-top: none;
+		@media screen and (max-width: 1039px) {
+			text-align: left;
+		}
+		.sharing-buttons {
+			text-align: left;
+		}
+	}
+
+}

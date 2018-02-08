@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="{{ locale_name }}">
+
+<head>
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+  <script src="//js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js" type="text/javascript"></script>
+
+  {{{head.meta_tags}}}
+
+  <title>{{head.title}}</title>
+
+  {{{head.config}}}
+
+  <link href="{{head.favicon}}" rel="shortcut icon">
+
+  <style type="text/css">
+    @font-face {
+      font-family: "form-icons";
+      src: url({{cdn "assets/fonts/form-icons.eot"}});
+      src: url({{cdn "assets/fonts/form-icons.woff"}}) format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  {{{stylesheet '/assets/css/theme.css'}}}
+
+  {{getFontsCollection}}
+
+  {{{head.scripts}}}
+  {{{head.rsslinks}}}
+
+  {{> components/common/theme-object}}
+  {{> components/global-injects}}
+  {{{snippet 'html_head'}}}
+
+  {{> core/structured-data/website}}
+</head>
+
+<body class="{{> components/body-classes}} mobile-nav-closed" data-currency-token="{{settings.money.currency_token}}" data-currency-location="{{settings.money.currency_location}}">
+
+  {{#if page_type '===' 'product'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog_post'}}
+    {{> components/common/facebook-like}}
+  {{/if}}
+
+  {{#if theme_settings.show_quick_shop}}
+    <div class="quick-shop-wrapper" data-quick-shop-wrapper>
+      <div class="quick-shop" data-quick-shop></div>
+      {{> components/common/spinner}}
+    </div>
+  {{/if}}
+
+  {{> components/header-banners}}
+
+  {{#if theme_settings.header_layout '===' 'left-aligned'}}
+    {{> components/header}}
+  {{else}}
+    {{> components/header-alternate}}
+  {{/if}}
+
+  <div class="main-content">
+    {{#block "page"}}{{/block}}
+  </div>
+
+  {{#if banners.bottom}}
+    <section class="page-banner page-banner-bottom">
+      {{#each banners.bottom}}
+        <div class="page-banner-inner">
+          <div class="banner rte">
+            {{{this}}}
+          </div>
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
+
+  {{> components/footer}}
+
+  {{> core/structured-data/breadcrumbs}}
+
+  <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+  <script>
+    // Exported in app.js
+    window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+  </script>
+
+  {{{footer.scripts}}}
+  {{{snippet 'footer'}}}
+</body>
+</html>

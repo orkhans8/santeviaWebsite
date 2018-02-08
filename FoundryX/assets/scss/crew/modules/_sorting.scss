@@ -1,0 +1,46 @@
+.product-grid-sorting {
+	margin-bottom: 0;
+	&:before {
+		display: none;
+	}
+
+	.sorting {
+		margin-top: 0;
+		.sorting-title {
+			display: none;
+		}
+		.form-label {
+			font-size: 12px;
+			font-weight: bold;
+		    display: block;
+		    height: auto;
+		    position: relative!important;
+		    width: auto;
+		    text-align: left;
+		    margin-bottom: 6px;
+		    @media screen and (min-width: 770px) {
+		    	position: absolute!important;
+				width: 55px;
+				clip: initial;
+				overflow: visible;
+				left: -55px;
+				top: 10px;
+				margin-bottom: 0;
+		    }
+		}
+	}
+
+	.product-sort-select {
+		background-color: transparent;
+		padding:0;
+		width: 100%;
+	}
+
+	.form-select-wrapper {
+	    height: 40px;
+	    line-height: 38px;
+	    border-color: #000;
+	    color:#000;
+	}
+
+}

@@ -1,0 +1,72 @@
+.page-wrap {
+	.button-contact-submit {
+		border-radius: 0;
+	}
+	.location {
+		text-align: center;
+		margin-bottom:35px;
+		h2 {
+			margin-bottom: 10px;
+		}
+		span {
+			font-weight: bold;
+		}
+		p {
+			margin:10px 0;
+		}
+		.map-container {
+			border-bottom:1px solid #e2dedb;
+			padding-bottom: 75px;
+			#map {
+				margin-top: 50px;
+				height: 400px;
+				width: 100%;
+			}
+		}
+	}
+	.get-in-touch {
+		h1,h2,h3 {
+			margin-bottom:10px;
+		}
+		.form {
+			text-align: center;
+			max-width: 550px;
+			margin: 40px auto 0;
+			.form-field-title {
+				display: none;
+			}
+			input[type="text"], input[type="email"], textarea {
+				border-radius:0;
+				width: 95%;
+				height: 60px;
+				padding: 20px;
+				box-sizing: border-box;
+				margin:0 auto 20px;
+				border:1px solid #000000;
+			}
+			.form-actions {
+				margin-top:25px;
+				text-align: left;
+				input[type="submit"] {
+					padding:20px;
+					font-weight: bold;
+				}
+				padding:0 2.5%;
+			}
+			textarea {
+				height: 150px;
+			}
+			.form-field-invalid {
+				background-color: rgba(red,0.1);
+				padding-top: 20px;
+				margin-bottom: 20px;
+				input, textarea {
+					margin-bottom:0;
+				}
+			}
+			.form-inline-message {
+				font-size: 14px;
+			}
+		}
+	}
+}

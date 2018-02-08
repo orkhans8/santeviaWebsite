@@ -1,0 +1,32 @@
+.header-topbar {
+	background-color: #000;
+	.header-tools-item > a .label {
+		color: #fff;
+		font-weight: normal;
+		&:hover {
+			color:$turq;
+		}
+	}
+
+	.icon-menu {
+		color: #fff;
+	}
+}
+
+.header-alternate .header-tools-item .search-input {
+	border:none;
+	background-color: #fff;
+}
+
+.navigation-wrap {
+	border-bottom:0;
+}
+
+@media screen and (max-width: 1039px) {
+	.header-alternate .header-currency-selector {
+		display: block;
+		text-align: right;
+		float: right;
+		z-index: 1;
+	}
+}

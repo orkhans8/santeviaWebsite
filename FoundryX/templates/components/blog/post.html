@@ -1,0 +1,64 @@
+<article class="blog-post">
+
+
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-8">
+          {{{body}}}
+        </div>
+        <div class="col-lg-3 sidebar">
+
+
+
+          {{#if this.author}}
+            <div class="blog-post-author">
+              <h4>
+                Author:
+              </h4>
+              {{author}}
+            </div>
+          {{/if}}
+
+
+
+          {{#if this.tags}}
+            <div class="blog-post-tags">
+              <h4>
+                {{lang 'blog.tags'}}
+              </h4>
+              <ul class="blog-post-tags-list">
+                {{#each tags}}
+                  <li class="blog-post-tag">
+                    <a href="{{url}}">{{name}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
+
+          {{#if this.sharing_buttons}}
+            <div class="blog-post-sharing">
+              <h4>
+                Share This:
+              </h4>
+              {{> components/snippets/sharing-buttons
+                sharing_url=sharing_url
+                sharing_title=sharing_title
+                sharing_source=sharing_source}}
+            </div>
+          {{/if}}
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+ 
+
+
+
+</article>

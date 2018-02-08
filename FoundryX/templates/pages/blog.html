@@ -1,0 +1,104 @@
+---
+blog:
+  posts:
+    limit: 6
+---
+
+{{#partial "page"}}
+
+<div class="blog-wrap">
+  <section class="layout-block blog-header">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="blog-title">{{blog.name}}</h1>
+          {{#if product.meta_description.length}}
+          	<div class="blog-description">{{{product.meta_description}}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-header">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-12">
+          {{> components/common/breadcrumbs breadcrumbs}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-block blog-layout-block">
+
+    <div class="blog-container">
+      <div class="container">
+        
+        <div class="row">
+          {{#each blog.posts}}
+
+            <div class="col-md-6 mb-8 item">
+
+              {{#if this.thumbnail}}
+                
+                  <a class="blog-post-thumbnail" href="{{url}}" title="{{thumbnail.alt}}">
+                    <img src="{{getImage thumbnail 'product_zoom'}}" alt="{{thumbnail.alt}}">
+                  </a>
+                
+              {{/if}}
+
+              <div class="blog-post-meta">
+                <time class="blog-post-date">{{date_published}}</time>
+
+                {{#if this.author}}
+                  <div class="blog-post-author">
+                    {{author}}
+                  </div>
+                {{/if}}
+              </div>
+							<h2 class="blog-post-title">
+							  <a href="{{url}}">{{title}}</a>
+							</h2>
+
+							{{#if summary}}
+								<div class="summary">
+									<p>{{{summary}}}</p>
+								</div>
+      				{{/if}}
+
+					    {{#if this.tags}}
+					    
+					      <div class="blog-post-tags">
+					        <span class="blog-post-tags-label">{{lang 'blog.tags'}}</span>
+					        <ul class="blog-post-tags-list">
+					          {{#each tags}}
+					            <li class="blog-post-tag">
+					              <a href="{{url}}">{{name}}</a>
+
+					            </li>
+					          {{/each}}
+					        </ul>
+					      </div>
+					    {{/if}}
+
+					    <a href="{{url}}" class="btn arrow">READ MORE <i class="crew-icon-thin-arrow-right"></i></a>
+
+            </div>
+
+          {{/each}}
+        </div>
+      </div>
+
+      {{#compare pagination.blog.links.length 1 operator=">"}}
+        {{> components/common/pagination pagination.blog}}
+      {{/compare}}
+    </div>
+
+  </section>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

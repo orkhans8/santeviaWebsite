@@ -1,0 +1,29 @@
+.home-body-health-callout {
+	.home-body-health-callout--container {
+		text-align: center;
+
+		@media screen and (min-width: 768px) {
+			text-align: left;
+		}
+
+		.section-title {
+			text-align: center;
+			@media screen and (min-width: 768px) {
+				text-align: left;
+			}
+			color: #000;
+    		font-weight: bold;
+    		margin:0;
+    		padding:0;
+		}
+
+
+		p {
+			margin: 15px 0 30px;
+		}
+		.ph-graphic {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+}

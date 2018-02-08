@@ -1,0 +1,72 @@
+{{#partial "page"}}
+<div class="page-wrap">
+  <section class="page-header">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="page-title">{{page.title}}</h1>
+          <div class="page-description"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+    {{#if forms.contact.success}}
+      <div class="container">
+        <div class="row page-content get-in-touch rte justify-content-center">
+          <div class="col-lg-8">
+            {{> core/alerts/alert-success (lang 'contact.success' shopPath=urls.home)}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
+
+    <div class="container">
+      <div class="row page-content location rte justify-content-center">
+        <div class="col-lg-10">
+            <h2>Location</h2>
+            <div class="desc">
+                {{#if settings.store_name}}
+                  <span>{{settings.store_name}}</span>
+                {{/if}}
+                {{#if settings.address}}
+                  <p>{{nl2br settings.address}}</p>
+                {{/if}}
+                {{#if settings.phone_number}}
+                  <a href="tel://{{settings.phone_number}}">{{settings.phone_number}}</a>
+                {{/if}}
+            </div>
+            <div class="map-container">
+              <div id="map" data-marker="{{cdn 'assets/img/marker.png'}}"></div>
+            </div>
+        </div>
+      </div>
+      <div class="row page-content get-in-touch rte justify-content-center">
+        
+        {{#if forms.contact.success}}
+        {{else}}
+          <div class="col-lg-6">
+            {{{page.content}}}
+          
+            {{> core/forms/form-contact-us}}
+          </div>
+        {{/if}}
+
+      </div>
+    </div>
+
+  </section>
+</div>
+{{/partial}}
+
+{{> layout/base}}
+
+<script>
+// get meta description, add to header
+ var desc = document.head.querySelector("[name=description]").content,
+     descContainer = document.querySelector('.page-description');
+     if (desc.length && desc !== 'Buy Santevia Pure AlkalineWater Systems, replacement filters and parts.') {
+        descContainer.innerHTML = desc;
+     }
+</script>

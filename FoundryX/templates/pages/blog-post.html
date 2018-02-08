@@ -1,0 +1,52 @@
+---
+blog:
+  recent_posts:
+    limit: 9
+---
+
+{{#partial "page"}}
+<div class="post-wrapper">
+  <header class="post-header" style="background-image:url('{{getImage blog.post.thumbnail 'widescreen'}}');">
+    {{#if blog.post.thumbnail}}
+      
+    {{/if}}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <time class="blog-post-date">{{blog.post.date_published}}</time>
+          <h1>
+            {{blog.post.title}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            {{> components/common/breadcrumbs breadcrumbs}}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="layout-block">
+    <div class="blog-container single-post">
+      
+        {{> components/blog/post blog.post
+          sharing_buttons=theme_settings.blog_sharing_buttons
+          sharing_source=settings.add_this.buttons
+          sharing_url=blog.post.url
+          sharing_title=blog.post.title
+        }}
+      
+    </div>
+  </section>
+
+  {{> core/structured-data/blog-post}}
+</div>
+{{/partial}}
+
+{{> layout/base}}

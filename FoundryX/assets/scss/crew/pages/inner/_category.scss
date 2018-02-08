@@ -1,0 +1,29 @@
+.cat-wrap {
+	.cat-header {
+		max-width: 100%;
+		padding: 8% 0 4%;
+		text-align: center;
+		background: {
+			size:cover;
+			position: top center;
+			repeat:no-repeat;
+			image:url('../img/inner/header.jpg');
+		}
+		.category-title {
+			margin: 0 auto;
+			font-size: 45px;
+			margin-bottom: 10px;
+			@media screen and (min-width: 1040px) {
+				font-size: 55px;
+			}
+		}
+	}
+	.sub-header {
+		text-align: left;
+		padding:30px 0;
+		.container {
+			border-bottom: 1px solid #e0dedb;
+			padding-bottom:15px;
+		}
+	}
+}
