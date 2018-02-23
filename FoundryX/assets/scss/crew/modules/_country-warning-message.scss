@@ -1,7 +1,16 @@
+
+/*======== The Whole Thing ======================================================*/
 .country-warning-message {
-	background-color: rgba(255,0,0,.8);
-	display: none;
-	position:relative;
+	background-color: rgba(85,0,0,.8);
+	width:50%;
+	position: fixed;
+	width: 500px;
+	height: 130px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px; /* Negative half of height. */
+	margin-left: -250px;
+	transition: all 0.3s ease;
 	.icon-close {
 		position: absolute;
 		right: 20px;
@@ -15,17 +24,36 @@
 			color: #000;
 		}
 	}
+
+
+
+	/*======== 'Looks like' area ==================================================*/
 	span {
-		padding: 5px 0;
+
 		color: #fff;
-		font-size: 14px;
+		font-size: 20px;
 		display: block;
 		text-align: center;
+		/*======== Link =========================================================*/
 		a {
 			color:#fff;
 			text-decoration: underline;
 		}
 	}
+
+	.close {
+		color:white;
+		font-size: 30px;
+	}
+
+	.close:hover {
+		color: grey;
+		cursor: pointer;
+	}
+
+/*===============================================================================*/
+
+	/*
 	.sticky-warning-message & {
 		position: fixed;
 		top: 0;
@@ -33,10 +61,15 @@
 		width: 100%;
 		opacity: 0;
 	}
+	*/
 
+
+	/*
 	&.fade-in {
 		transition: all 0.3s ease;
 		opacity: 1;
 	}
+	*/
+
 }
 

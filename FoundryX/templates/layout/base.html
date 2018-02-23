@@ -38,6 +38,7 @@
   {{{snippet 'html_head'}}}
 
   {{> core/structured-data/website}}
+
 </head>
 
 <body class="{{> components/body-classes}} mobile-nav-closed" data-currency-token="{{settings.money.currency_token}}" data-currency-location="{{settings.money.currency_location}}">
@@ -87,6 +88,7 @@
 
   <script src="{{cdn '/assets/js/bundle.js'}}"></script>
   <script>
+
     // Exported in app.js
     window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
   </script>
@@ -94,4 +96,5 @@
   {{{footer.scripts}}}
   {{{snippet 'footer'}}}
 </body>
+
 </html>

@@ -32,7 +32,7 @@ export default class Global extends PageManager {
 
   }
 
-  appendCountryMessage($country1, $country2, $link) {      
+  appendCountryMessage($country1, $country2, $link) {
       var msgBar = '<div class="country-warning-message"><div class="container"><div class="row"><div class="col-12"><span>It looks like you\'re shopping from ' + $country1 + '. <a href="' + $link + '">Click here to shop our ' + $country2 + ' store.</a></span></div></div></div></div>';
       $('body').prepend(msgBar);
       $('.country-warning-message').slideDown( "slow");
@@ -83,7 +83,7 @@ export default class Global extends PageManager {
     /*
      *  Country bar functionality
      */
-      
+
     $(window).scroll(function() {
         var $scroll_position = $(window).scrollTop(),
             height = $('.country-warning-message').height();

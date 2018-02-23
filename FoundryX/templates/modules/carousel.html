@@ -92,4 +92,39 @@
       </div>
     {{/if}}
   </section>
+  <!-- Adding checker to local storage for pop up and removing  -->
+  <!-- Change to Session -->
+  <script>
+    function closeFunction() {
+        alert("I am going to close");
+        document.getElementById("popthisup").remove();
+        localStorage.setItem("removed", true);
+    }
+
+
+
+
+    function func1() {
+      if (localStorage.getItem("homeCheck") === null) {
+          localStorage.setItem("homeCheck", true);
+          console.log("aaaaaa");
+      }
+    }
+
+
+    function func2() {
+    if ((localStorage.getItem("homeCheck") !== null) && (localStorage.getItem("removed") !== null)) {
+          document.getElementById("popthisup").remove();
+          console.log("bbbbb");
+      }
+    }
+
+   function start() {
+    func1();
+    func2();
+  }
+  window.onload = start;
+
+
+  </script>
 </section>
